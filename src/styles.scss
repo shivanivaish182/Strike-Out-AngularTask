@@ -1,0 +1,170 @@
+/* Add application styles & imports to this file! */
+$myFont: 'Poppins', sans-serif;
+$textGrey: #a5a1b4;
+$textPurple:#5d5581;
+
+.main-wrapper {
+  position: absolute;
+  width: 400px;
+  text-align: center;
+  margin: 0 auto;
+  top: 50%;
+  transform: translate(0px, -50%);
+  left: 0px;
+  right: 0px;
+  border-radius: 15px;
+  padding: 0px 10px;
+  background: linear-gradient(to right, #eff4f5 50%, white 50% );
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all .4s ease-in;
+}
+.main-wrapper h1{
+  display:inline-block;
+  font-weight:normal;
+  margin:0px;
+  font-size:35px;
+  vertical-align: bottom;
+}
+
+@keyframes strike{
+  0%   { width : 0; }
+  100% { width: 100%; }
+}
+.strike {
+  position: relative;
+}
+.strike::after {
+  content: ' ';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #716f7a;
+  animation-name: strike;
+  animation-duration: 0.3s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; 
+}
+
+.purple-text{
+  color:$textPurple;
+  font-family: $myFont;
+}
+.big-text {
+    font-weight: normal;
+    font-size: 35px;
+    margin-left: 0px;
+    display: block;
+}
+.grey-text{
+  color:$textGrey;
+  font-family: $myFont;
+  font-weight:normal;
+  font-size:34px;
+  display:inline;
+}
+.main-wrapper .mat-input-element {
+    border: none;
+    font-family: $myFont;
+    color: $textPurple;
+    border-radius: 16px;
+    font-size: 35px;  
+}
+.check-uncheck {
+    text-align: left;
+}
+.main-wrapper .mat-input-element:focus{
+  background-color: transparent;
+}
+.plus-button {
+	border: none;
+  background-color: transparent;
+	font-size: 16px;
+	height: 2.5em;
+	width: 2.5em;
+	border-radius: 999px;
+  display: inline-block;
+  position: absolute;
+  left: 40px;
+  top: 17px;
+  outline:none;
+	
+	&:after,
+	&:before {
+		content: "";
+		display: block;
+		background-color:$textPurple;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	
+	&:before {
+		height: 1.5em;
+		width: 0.2em;
+    border-radius:4px;
+	}
+
+	&:after {
+		height: 4px;
+		width: 31px;
+    border-radius:4px;
+	}
+}
+.plus-button--large {
+	font-size: 21px;
+}
+.plus-button-text {
+  left: 37%;
+  top: 0px;
+}
+.mat-icon{
+  margin-top: 5px;
+}
+.check-uncheck img, .check-uncheck span {
+    display: inline-block;
+}
+.check-uncheck img {
+    width: 40px;
+    vertical-align: sub;
+    margin-right: 1em;
+    float: left;
+    display: block;
+    margin-top: 8px;
+}
+.mat-form-field-appearance-fill .mat-form-field-flex {
+    border-radius: 4px 4px 0 0;
+    padding: 0px!important;
+    display: block;
+}
+.mat-form-field-infix {
+    display: block;
+    width: 85% !important;
+    float: right;
+}
+.mat-form-field-prefix, .mat-form-field-suffix {
+    white-space: nowrap;
+    flex: none;
+    position: relative;
+    display: block;
+    float: left;
+    width: 40px;
+    height: 40px;
+}
+.check-uncheck span {
+    float: left;
+    width: auto;
+}
+.mat-input-element::-webkit-input-placeholder  {
+    transition: opacity 1.0s linear; color: gray;
+}
+.mat-input-element:focus::-webkit-input-placeholder {
+     transition: opacity 0.5s 0.2s ease!important;
+      opacity: 0.4;
+}
+.removeBg {background: transparent;background-position: right bottom;}
+.showbgcolor{ background-position: left bottom;}

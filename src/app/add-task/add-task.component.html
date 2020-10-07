@@ -1,0 +1,25 @@
+<mat-sidenav-container style="height: calc(100vh - 20px)">
+	<div class="basic-container">
+		<div class="vertical-center">
+			<div class="main-wrapper" [ngClass]="{'showbgcolor' : colorState}" [class.removeBg] = "removeBg">
+				<div [@openClose]="currentState" >
+					<mat-form-field appearance="fill" *ngIf="currentState=='open'"> 
+						<mat-icon *ngIf="isAddIconShow"  style="font-size: 45px;color: #5d5581;display: block;margin-right: 1em;vertical-align: sub;" class="add-icon" matPrefix>add</mat-icon>
+            
+						<input matInput [(ngModel)]="inputTag" placeholder="Add your first task" (focus)="focus()" 
+           (focusout)="focusOut()" (keydown.enter)="onKeypress($event)" [@colorState]="colorState">
+        </mat-form-field>
+				</div>
+
+				<div [@openClose]="currentState" class="check-uncheck" [ngClass]="{'showbgcolor' : colorState}" *ngIf="currentState=='inChkboxState'">
+				<img [@rotatedState]='state' (click)="onCheckBoxChange()"  [src]="imgSrc">
+          
+					<span [@textOpacity]='currentTextState' [ngClass]="isCrossChkBoxShow?'purple-text big-text strike' : 'purple-text big-text' ">{{inputTag}}
+          </span>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+</mat-sidenav-container>
